@@ -15,8 +15,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      api: "https://api.themoviedb.org/3/movie/",
+      api: "https://api.themoviedb.org/3/",
       tokenAccess: process.env.NUXT_TOKEN_ACCESS,
+      apiKey: process.env.NUXT_API_KEY,
     },
   },
 });
