@@ -1,7 +1,14 @@
-export async function baseApi(endpoint = "", params = {}) {
+export async function baseApi(endpoint = "", params = {}, withApiKey = false) {
   const config = useRuntimeConfig();
-  const { api, tokenAccess } = config.public;
-  await useFetch(api + `${endpoint}`, {
+  const { api, tokenAccess, apiKey: api_key } = config.public;
+  if (withApiKey) {
+    params = {
+      ...params,
+      api_key,
+    };
+  }
+
+  return await useFetch(api + `${endpoint}`, {
     params,
     headers: {
       Accept: "application/json",
