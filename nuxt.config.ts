@@ -13,4 +13,10 @@ export default defineNuxtConfig({
     },
     autoImport: true,
   },
+  runtimeConfig: {
+    public: {
+      api: "https://api.themoviedb.org/3/movie/",
+      tokenAccess: process.env.NUXT_TOKEN_ACCESS,
+    },
+  },
 });
