@@ -5,16 +5,20 @@
     placeholder="Busca peliculas o Series ..."
     inputClass="w-full h-10 rounded-lg p-2 focus:border-yellow-400 focus:border-4 "
     dropdownClass="flex w-3/4 text-yellow bg-red-300"
-    panelClass="w-2/4 bg-gray-300 overflow-y-auto scroll-m-0 transition duration-300"
+    panelClass="w-2/4 bg-gray-400 overflow-y-auto scroll-m-0 transition duration-300 transition transition-all"
     v-model="search"
     :loading="isSearch"
-    :suggestions="results">
-    <template #option="slotProps">
-      <p
-        class="w-full bg-grey-300 text-yellow-400 cursor-pointer my-5"
-        @click="cleanField">
-        {{ slotProps }}
-      </p>
+    :suggestions="results"
+    @option-select="cleanField">
+    <template #option="{ option }">
+      <div
+        class="w-full bg-gray-400 text-black cursor-pointer my-5 hover:bg-gray-600">
+        <SearchBarItem
+          @click="$router.push(`/${option.id}`)"
+          :srcPoster="option.poster_path"
+          :title="option.original_title"
+          :overview="option.overview" />
+      </div>
     </template>
   </AutoComplete>
 </template>
@@ -29,6 +33,7 @@
 
   function cleanField() {
     search.value = "";
+    results.value = [];
   }
   onMounted(() => {
     searchMovie = useSearch();
