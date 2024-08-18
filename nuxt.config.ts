@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       api: "https://api.themoviedb.org/3/",
+      imageTmbd: "https://image.tmdb.org/t/p/",
       tokenAccess: process.env.NUXT_TOKEN_ACCESS,
       apiKey: process.env.NUXT_API_KEY,
     },
