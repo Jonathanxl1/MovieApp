@@ -16,3 +16,10 @@ export async function baseApi(endpoint = "", params = {}, withApiKey = false) {
     },
   });
 }
+
+export function getSrcImage(id = "", size = "original") {
+  const config = useRuntimeConfig();
+  const { imageTmbd } = config.public;
+  if (!id) return;
+  return `${imageTmbd}/${size}/${id}`;
+}
