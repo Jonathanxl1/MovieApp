@@ -35,4 +35,7 @@
     }
   });
 
+  onBeforeUnmount(() => {
+    storeMovie.restoreSearchMovies();
+  });
 </script>
