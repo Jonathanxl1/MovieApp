@@ -3,8 +3,12 @@
     <div class="w-full h-50 px-10">
       <carousel-movies :movies="movies" />
     </div>
-    <div class="w-full h-auto">
-      <p v-for="x in geners" :key="x.id" class="h-72">{{ x.name }}</p>
+    <div class="w-full h-auto mb-24">
+      <CategoryViewer
+        v-for="x in geners"
+        :key="x.id"
+        :category="x.name"
+        :id="x.id" />
     </div>
     <div class="blog w-full flex h-auto space-x-5 justify-between px-5">
       <div class="blog-card w-1/4">
