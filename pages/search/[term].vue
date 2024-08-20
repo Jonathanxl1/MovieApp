@@ -1,11 +1,13 @@
 <template>
   <div class="w-full h-auto">
-    <h1>Search : {{ term }}</h1>
+    <h1 class="my-5">
+      <span class="text-lg font-bold">Search:</span> {{ term }}
+    </h1>
     <div
-      class="w-full h-auto"
+      class="w-full h-auto lg:flex lg:flex-col lg:items-center"
       v-if="searchResults && searchResults.results?.length">
       <SearchBarItem
-        class="cursor-pointer"
+        class="my-5 cursor-pointer"
         v-for="(result, idx) in searchResults.results"
         @click="$router.push(`/${result.id}`)"
         :key="idx"
