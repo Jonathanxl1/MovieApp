@@ -1,11 +1,13 @@
 <template>
-  <div class="px-2 py-2 flex space-x-2 items-center">
-    <div class="w-1/4 mr-5">
+  <div
+    class="flex flex-col sm:w-96 lg:flex-row lg:w-3/4 lg:px-2 lg:py-2 lg:flex lg:space-x-2 lg:items-center">
+    <div class="sm:w-1/4 lg:w-1/4 lg:mr-5 flex lg:justify-center">
       <Image
-        imageClass="w-3/5 h-auto aspect-square rounded rounded-lg"
+        class="sm:w-1/4 lg:w-full"
+        imageClass="w-1/4 sm:w-2/4 lg:w-full h-auto lg:aspect-square rounded rounded-lg mx-auto"
         :src="getSrcImage(srcPoster)" />
     </div>
-    <div class="w-3/4 flex flex-col justify-start">
+    <div class="sm:w-1/4 lg:w-3/4 flex flex-col justify-start">
       <span class="text-left"> {{ title }} </span>
       <span>{{ overview }}</span>
     </div>
