@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   css: ["primeicons/primeicons.css"],
   devtools: { enabled: false },
-  modules: ["@primevue/nuxt-module", "@nuxtjs/tailwindcss"],
+  modules: ["@primevue/nuxt-module", "@nuxtjs/tailwindcss", "@pinia/nuxt"],
   primevue: {
     options: {
       theme: Aura,
@@ -21,5 +21,8 @@ export default defineNuxtConfig({
       tokenAccess: process.env.NUXT_TOKEN_ACCESS,
       apiKey: process.env.NUXT_API_KEY,
     },
+  },
+  pinia: {
+    storesDirs: ["./store/**"],
   },
 });
