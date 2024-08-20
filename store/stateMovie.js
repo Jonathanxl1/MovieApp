@@ -7,7 +7,7 @@ export const useStateMovie = defineStore("stateMovie", {
   }),
   actions: {
     async setDetails(id) {
-      let { data } = await useGetDetails()(id);
+      let { data } = await useGetDetails(id);
       this.detailsMovie = data.value;
     },
     restoreDetails() {
