@@ -1,22 +1,31 @@
 <template>
-  <div class="flex w-full h-72 flex-col mb-96">
-    <h2 class="text-left m-20">{{ category }}</h2>
-    <Carousel
-      containerClass="flex flex-row mx-5"
-      :value="results"
-      :numVisible="3"
-      :circular="true"
-      :numScroll="3"
-      :responsiveOptions="responsiveOptions">
-      <template #item="{ data }">
-        <PosterView
-          class="mx-8"
-          @click="$router.push(`/${data.id}`)"
-          :srcPoster="data.poster_path"
-          :title="data.original_title"
-          :rating="data.vote_average" />
-      </template>
-    </Carousel>
+  <div class="flex w-full h-1/4 flex-col my-24">
+    <div>
+      <h2
+        class="lg:text-left lg:my-20 sm:text-center sm:mx-auto text-2xl bg-gradient-to-r from-yellow-400 from-50% text-white p-5">
+        {{ category }}
+      </h2>
+    </div>
+    <div class="flex flex-row w-full h-full py-10 mx-auto">
+      <Carousel
+        class="w-full"
+        containerClass="relative w-full "
+        contentClass="w-full mx-auto"
+        :value="results"
+        :numVisible="3"
+        :circular="true"
+        :numScroll="3"
+        :responsiveOptions="responsiveOptions">
+        <template #item="{ data }">
+          <PosterView
+            class="mx-8 min-h-24"
+            @click="$router.push(`/${data.id}`)"
+            :srcPoster="data.poster_path"
+            :title="data.original_title"
+            :rating="data.vote_average" />
+        </template>
+      </Carousel>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
