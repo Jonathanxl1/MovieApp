@@ -1,8 +1,5 @@
 import { baseApi } from "~/utils/api";
-
-export default function () {
-  return function (id) {
-    if (!id) return;
-    return baseApi(`movie/${id}`, {}, true);
-  };
+export default function (id) {
+  if (!id) return;
+  return baseApi(`movie/${id}`, {}, true);
 }
