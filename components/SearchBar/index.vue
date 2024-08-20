@@ -9,7 +9,8 @@
     v-model="search"
     :loading="isSearch"
     :suggestions="results"
-    @option-select="cleanField">
+    @option-select="cleanField"
+    pt:loader:class="text-yellow-400 -ml-10">
     <template #option="{ option }">
       <div
         class="w-full bg-gray-400 text-black cursor-pointer my-5 hover:bg-gray-600">
