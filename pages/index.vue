@@ -8,7 +8,6 @@
     </div>
     <div class="w-full h-auto mb-24">
       <CategoryViewer
-        class="my-5"
         v-for="x in geners"
         :key="x.id"
         :category="x.name"
