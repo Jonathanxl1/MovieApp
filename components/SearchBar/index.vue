@@ -9,6 +9,7 @@
     v-model="search"
     :loading="isSearch"
     :suggestions="results"
+    emptySearchMessage="No se han encontrado resultados"
     @option-select="cleanField"
     pt:loader:class="text-yellow-400 -ml-10">
     <template #option="{ option }">
