@@ -1,10 +1,33 @@
-# Nuxt 3 Minimal Starter
+# Movie Finder
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Aplicacion de vuejs 3 en Nuxt con Primevue y Nuxt 3
+
+Servicio desplegado en la siguiente Url: [https://moviefinder-1.netlify.app/](https://moviefinder-1.netlify.app/)
+
+## Tabla de Contenidos
+
+- [Library Versions](#setup)
+- [Setup](#setup)
+- [Instalación](#instalación)
+
+## Library Versions
+
+- **Nuxt**: `^3.11.2`
+- **Pinia/Nuxt**: `5.0.1`
+- **Vue**: `^3.4.27`
+- **Vue-router**: `^4.3.2`
+- **Prime-vue**: `^4.3.2`
 
 ## Setup
 
-Make sure to install the dependencies:
+Previamente para poder realizar las pruebas en entorno de desarrollo correspondientes se necesita generar un TOKEN con la Api de Unsplash para consumir las imagenes, demas valores son para consumo de la api de Alegra, en el build gracias a `nuxt.config.ts` se compila con el token relacionado al `.env`
+
+```env
+NUXT_TOKEN_ACCESS=<TOKEN_TMBD>
+NUXT_API_KEY=<API_KEY>
+```
+
+Para Instalar:
 
 ```bash
 # npm
@@ -71,5 +94,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
