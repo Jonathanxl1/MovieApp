@@ -18,5 +18,8 @@ export const useStateMovie = defineStore("stateMovie", {
       this.searchResults =
         data.value && Object.keys(data.value).length ? toRefs(data.value) : [];
     },
+    restoreSearchMovies() {
+      this.searchResults = Object.assign({}, []);
+    },
   },
 });
