@@ -22,7 +22,12 @@
       <div
         class="w-full bg-gray-400 text-black cursor-pointer my-5 hover:bg-gray-600">
         <SearchBarItem
-          @click="$router.push(`/${option.id}`)"
+          @click="
+            () => {
+              $router.push(`/${option.id}`);
+              cleanField();
+            }
+          "
           :srcPoster="option.poster_path"
           :title="option.original_title"
           :overview="option.overview" />
