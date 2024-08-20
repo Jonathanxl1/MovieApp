@@ -1,6 +1,6 @@
 <template>
   <AutoComplete
-    class="w-3/4 flex"
+    class="w-2/4 flex"
     unstyled
     placeholder="Busca peliculas o Series ..."
     inputClass="w-full h-10 rounded-lg p-2 focus:border-yellow-400 focus:border-4 "
