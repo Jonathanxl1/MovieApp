@@ -20,7 +20,7 @@ Servicio desplegado en la siguiente Url: [https://moviefinder-1.netlify.app/](ht
 
 ## Setup
 
-Previamente para poder realizar las pruebas en entorno de desarrollo correspondientes se necesita generar un TOKEN con la Api de Unsplash para consumir las imagenes, demas valores son para consumo de la api de Alegra, en el build gracias a `nuxt.config.ts` se compila con el token relacionado al `.env`
+Previamente para poder realizar las pruebas en entorno de desarrollo correspondientes se necesita generar un TOKEN con la Api de TMBD para consumir las recursos de la base de datos, demas valores son para consumo de la api de tmdb, en el build gracias a `nuxt.config.ts` se compila con el token relacionado al `.env`
 
 ```env
 NUXT_TOKEN_ACCESS=<TOKEN_TMBD>
