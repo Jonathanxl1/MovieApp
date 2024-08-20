@@ -10,3 +10,6 @@
     <FooterBar />
   </div>
 </template>
+<script setup>
+  const stateUi = useStateUi();
+</script>
