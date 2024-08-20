@@ -46,7 +46,7 @@
 
   function cleanField() {
     search.value = "";
-    results.value = [];
+    results.value.splice(0, results.value.length);
   }
   onMounted(() => {
     searchMovie = useSearch();
