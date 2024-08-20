@@ -9,6 +9,7 @@
     v-model="search"
     :loading="isSearch"
     :suggestions="results"
+    variant="filled"
     emptySearchMessage="No se han encontrado resultados"
     @option-select="cleanField"
     @keyup.enter="
@@ -17,6 +18,7 @@
         cleanField();
       }
     "
+    @complete="searchMovies"
     pt:loader:class="text-yellow-400 -ml-10">
     <template #option="{ option }">
       <div
@@ -42,35 +44,35 @@
   let isSearch = ref<Ref<boolean> | boolean>(false);
   let results = ref<Array<Object>>([]);
   let debounce = ref<number | null | ReturnType<typeof setTimeout>>(null);
-  let searchMovie: Function;
 
   function cleanField() {
     search.value = "";
     results.value.splice(0, results.value.length);
   }
-  onMounted(() => {
-    searchMovie = useSearch();
-  });
 
-  watch(search, (newValue: string) => {
+  function searchMovies() {
     {
-      isSearch.value = true;
-      if (!newValue || (newValue && newValue.length < 3)) {
-        isSearch.value = false;
-        return;
-      }
+      let newValue = search.value;
       if (debounce.value) {
         clearTimeout(debounce.value);
+        debounce.value = null;
       }
-      debounce.value = setTimeout(() => {
-        searchMovie(newValue as string).then(
+      if (!newValue || (newValue && newValue.length <= 3)) {
+        isSearch.value = false;
+        results.value.splice(0, results.value.length);
+        return;
+      }
+      isSearch.value = true;
+
+      debounce.value = setTimeout(async () => {
+        await useSearch(newValue as string).then(
           ({ data }: { data: { value: any } }) => {
-            results = data.value.results;
+            results = toRef(data.value, "results");
             isSearch.value = false;
           }
         );
         isSearch.value = false;
       }, 800);
     }
-  });
+  }
 </script>
