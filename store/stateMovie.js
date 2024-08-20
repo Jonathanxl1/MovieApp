@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 export const useStateMovie = defineStore("stateMovie", {
   state: () => ({
     detailsMovie: {},
+    searchResults: [],
   }),
   actions: {
     async setDetails(id) {
@@ -11,6 +12,11 @@ export const useStateMovie = defineStore("stateMovie", {
     },
     restoreDetails() {
       this.detailsMovie = Object.assign({});
+    },
+    async searchMovies(string) {
+      let { data } = await useSearch(string);
+      this.searchResults =
+        data.value && Object.keys(data.value).length ? toRefs(data.value) : [];
     },
   },
 });
