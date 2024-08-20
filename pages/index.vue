@@ -1,51 +1,18 @@
 <template>
-  <div>
-    <div class="w-full h-50 px-10">
+  <div class="pb-32">
+    <div class="w-full h-50 px-10 mb-5">
       <carousel-movies :movies="movies" />
+    </div>
+    <div class="w-full my-10">
+      <h1 class="text-center text-4xl font-bold">Mira todas las categorias</h1>
     </div>
     <div class="w-full h-auto mb-24">
       <CategoryViewer
+        class="my-5"
         v-for="x in geners"
         :key="x.id"
         :category="x.name"
         :id="x.id" />
-    </div>
-    <div class="blog w-full flex h-auto space-x-5 justify-between px-5">
-      <div class="blog-card w-1/4">
-        <div>Title</div>
-        <div>
-          <p class="text-ju">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis
-            tempore rerum, dolor ea quidem similique sed impedit, ipsum
-            voluptates rem sint ipsam id. Eius blanditiis in eveniet adipisci
-            doloribus?
-          </p>
-        </div>
-      </div>
-
-      <div class="blog-card w-1/4">
-        <div class="">Title</div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis
-            tempore rerum, dolor ea quidem similique sed impedit, ipsum
-            voluptates rem sint ipsam id. Eius blanditiis in eveniet adipisci
-            doloribus?
-          </p>
-        </div>
-      </div>
-
-      <div class="blog-card w-1/4">
-        <div>Title</div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis
-            tempore rerum, dolor ea quidem similique sed impedit, ipsum
-            voluptates rem sint ipsam id. Eius blanditiis in eveniet adipisci
-            doloribus?
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </template>
