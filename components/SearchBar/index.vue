@@ -11,6 +11,12 @@
     :suggestions="results"
     emptySearchMessage="No se han encontrado resultados"
     @option-select="cleanField"
+    @keyup.enter="
+      () => {
+        if (!!search) $router.push(`/search/${search}`);
+        cleanField();
+      }
+    "
     pt:loader:class="text-yellow-400 -ml-10">
     <template #option="{ option }">
       <div
